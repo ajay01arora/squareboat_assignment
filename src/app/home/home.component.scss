@@ -1,0 +1,36 @@
+$username-size : 20px;
+
+.üsername
+{
+    font-weight: bold;
+    font-size: $username-size ;
+}
+
+.post-box{
+    padding: 2vw 2vw 2vw 5vw;
+}
+
+.post-textarea{
+    width: 100%;
+    height: 8vw;
+    border-radius: 15px;
+    padding: 23px;
+    margin-bottom: 10px;
+}
+
+
+.add-post-button
+{
+    width: 100%;
+}
+
+.post-margin
+{
+    margin-right: 2vw;
+}
+.post-time{
+    
+    margin-left: 20px;
+    margin-top: 2px;
+
+}

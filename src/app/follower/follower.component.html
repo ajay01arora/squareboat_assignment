@@ -1,0 +1,40 @@
+<!-- Nav pills -->
+<ul class="nav nav-pills">
+      <li class="nav-item">
+        <a class="nav-link active" data-toggle="pill" href="#canfollow">Can Follow</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-toggle="pill" href="#following">Following</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-toggle="pill" href="#followers">Followers</a>
+    </li>
+  </ul>
+  
+  <!-- Tab panes -->
+  <div class="tab-content" >
+    <div class="tab-pane container active" id="canfollow">
+      <div class="follow-list" *ngFor="let user of CanFollowList">
+          <span class="username">{{user.name}}</span>
+          <button class="btn btn-primary unfollow-btn" (click)="FollowRequest(user.id)">Follow</button>
+      </div>
+      <div class="spinner-border" *ngIf="IsLoaderEnable"></div>   
+      <div *ngIf="!IsLoaderEnable && CanFollowList.length == 0">Not find any one who can follow.</div>   
+  </div>
+    <div class="tab-pane container fade" id="following">
+        <div class="follow-list" *ngFor="let user of FollowingList">
+            <span class="username">{{user.name}}</span>
+            <button class="btn btn-primary unfollow-btn" (click)="UnFollowRequest(user.id)">UnFollow</button>
+        </div>
+        <div class="spinner-border" *ngIf="IsLoaderEnable"></div>  
+        <div *ngIf="!IsLoaderEnable && FollowingList.length == 0">Not find any following.</div>   
+    </div>
+    <div class="tab-pane container fade" id="followers">
+        <div class="follow-list" *ngFor="let user of FollowerList">
+            <span class="username">{{user.name}}</span>
+            <button class="btn btn-primary unfollow-btn"(click)="RemoveRequest(user.id)">Remove</button>            
+        </div>    
+        <div class="spinner-border" *ngIf="IsLoaderEnable"></div>  
+        <div *ngIf="!IsLoaderEnable && FollowerList.length == 0">Not find any follower.</div>   
+    </div>    
+  </div>

@@ -1,0 +1,33 @@
+<div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark" style="width:auto; height: 100%;">
+    <a [routerLinkActive]="['active']" routerLink="/home" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+      <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
+      <span class="fs-4">Assignment</span>
+    </a>
+    <hr>
+    <ul class="nav nav-pills flex-column mb-auto">
+      <li class="nav-item">
+        <a [routerLinkActive]="['active']" routerLink="/home" class="nav-link text-white">
+          <svg class="bi me-2" width="16" height="16"><use xlink:href="#home"></use></svg>
+          Home
+        </a>
+      </li>
+      <li>
+        <a [routerLinkActive]="['active']" routerLink="/followers" class="nav-link text-white">
+          <svg class="bi me-2" width="16" height="16"><use xlink:href="#speedometer2"></use></svg>  
+          Followers          
+        </a>
+      </li>         
+    
+
+    <div class="dropdown">
+      <li class="dropdown-toggle nav-link text-white" data-toggle="dropdown" style="background-color: transparent;margin-left: 18px;">
+        {{username}}
+      </li>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" (click)="logout()">Logout</a>
+      </div>
+    </div>
+  </ul>
+    <hr>
+    
+  </div>

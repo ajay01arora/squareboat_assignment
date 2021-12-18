@@ -1,0 +1,19 @@
+<div class="jumbotron post-box" style="background-color: white;">
+    <div class="row post-margin" >        
+            <textarea class="post-textarea" placeholder="What's happening?" [(ngModel)]="post_content"></textarea>        
+    </div>
+    <div class="row post-margin">        
+        <button class="btn btn-primary add-post-button" (click)="addPosts()" >Post</button>    
+    </div>
+</div>
+<div class="spinner-border" *ngIf="IsLoaderEnable"></div>  
+        <div *ngIf="!IsLoaderEnable && PostList.length == 0">Not find any posts.</div>   
+<div class="jumbotron post-box" *ngFor="let post of PostList">
+    <div class="row post-margin">
+        <span class="üsername">{{post.name}}</span>   
+        <span class="post-time">{{post.created_at}}</span>   
+    </div>
+    <div class="row post-margin">        
+            <p class="content">{{post.post_content}}</p>
+    </div>    
+</div>
